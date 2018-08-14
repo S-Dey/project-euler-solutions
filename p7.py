@@ -7,7 +7,7 @@ can see that the 6th prime is 13.
 What is the 10,001st prime number?
 """
 
-
+"""
 def nth_prime(n):
     counter = 2
     for i in range(3, n**2, 2):
@@ -23,3 +23,19 @@ def nth_prime(n):
 
 
 print(nth_prime(10001))
+"""
+
+
+def nth_prime(n):
+    x = 2
+    list_of_primes = []
+
+    while (len(list_of_primes) < n):
+        if all(x % prime for prime in list_of_primes):
+            list_of_primes.append(x)
+        x += 1
+
+    print(list_of_primes[-1])
+
+
+nth_prime(6)
